@@ -60,9 +60,7 @@ public class TileEntityCampfire extends TileEntityCreative implements IInventory
 		nbt.setInteger("durationLeft", durationLeft);
 		nbt.setInteger("durationMax", durationMax);
 		
-		NBTTagCompound inventory = new NBTTagCompound();
-		InventoryUtils.saveInventory(new ItemStack[]{stack}, inventory);
-		nbt.setTag("inventory", inventory);
+		nbt.setTag("inventory", InventoryUtils.saveInventory(new ItemStack[]{stack}));
 	}
 	
 	@Override

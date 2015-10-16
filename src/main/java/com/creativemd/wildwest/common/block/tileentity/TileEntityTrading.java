@@ -148,10 +148,7 @@ public class TileEntityTrading extends TileEntityCreative implements IInventory{
 	        tradeItem.writeToNBT(tradeNBT);
 	        nbt.setTag("trade", tradeNBT);
         }
-        
-        NBTTagCompound invNBT = new NBTTagCompound();
-        InventoryUtils.saveInventory(inventory, invNBT);
-        nbt.setTag("inv", invNBT);
+        nbt.setTag("inv", InventoryUtils.saveInventory(inventory));
         
         nbt.setString("owner", owner);
     }
